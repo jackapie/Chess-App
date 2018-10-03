@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChessApp
+namespace ChessApp.Pieces
 {
-    class King : Piece
+    class BlackPawn : Pawn
     {
     }
 }

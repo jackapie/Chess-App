@@ -1,24 +1,19 @@
-using ChessApp;
+﻿using ChessApp;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace ChessAppTests
 {
     [TestClass]
-    public class UnitTest1
+    public class ChessPieceTests
     {
-        [TestMethod]
-        public void CreateChessBoardTest()
-        {
-            var chessBoard = new ChessBoard();
-
-            Assert.IsNotNull(chessBoard);
-        }
-
         [TestMethod]
         public void CreateWhitePawnTest()
         {
             var pieceFactory = new WhitePieceFactory();
-            
+
             var whitePawn = pieceFactory.CreatePawn();
             Assert.IsNotNull(whitePawn);
         }
@@ -63,15 +58,7 @@ namespace ChessAppTests
             Assert.IsNotNull(whiteRook);
         }
 
-        [TestMethod]
-        public void CreateWhitePieceFactoryTest()
-        {
-            var pieceFactory = new WhitePieceFactory();
-            Assert.IsNotNull(pieceFactory);
-
-        }
-
-
+                
         [TestMethod]
         public void CreateBlackPawnTest()
         {
@@ -119,14 +106,6 @@ namespace ChessAppTests
             var pieceFactory = new BlackPieceFactory();
             var blackRook = pieceFactory.CreateRook();
             Assert.IsNotNull(blackRook);
-        }
-
-        [TestMethod]
-        public void CreateBlackPieceFactoryTest()
-        {
-            var pieceFactory = new BlackPieceFactory();
-            Assert.IsNotNull(pieceFactory);
-
         }
     }
 }

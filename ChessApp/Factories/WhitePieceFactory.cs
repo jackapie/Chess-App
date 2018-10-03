@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChessApp.Pieces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,32 +11,32 @@ namespace ChessApp
     {
         public override Piece CreatePawn()
         {
-            var whitePawn = new Pawn();
+            var whitePawn = new WhitePawn();
             return whitePawn;
         }
         public override Piece CreateKing()
         {
-            var whiteKing = new King();
+            var whiteKing = new WhiteKing();
             return whiteKing;
         }
         public override Piece CreateQueen()
         {
-            var whiteQueen = new Queen();
+            var whiteQueen = new WhiteQueen();
             return whiteQueen;
         }
         public override Piece CreateKnight()
         {
-            var whiteKnight = new Knight();
+            var whiteKnight = new WhiteKnight();
             return whiteKnight;
         }
         public override Piece CreateBishop()
         {
-            var whiteBishop = new Bishop();
+            var whiteBishop = new WhiteBishop();
             return whiteBishop;
         }
         public override Piece CreateRook()
         {
-            var whiteRook = new Rook();
+            var whiteRook = new WhiteRook();
             return whiteRook;
         }
     }
