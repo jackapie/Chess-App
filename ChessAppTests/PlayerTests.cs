@@ -15,13 +15,28 @@ namespace ChessAppTests
             Assert.IsNotNull(player);
         }
 
+        [TestMethod]
         public void SetOfPiecesTest()
         {
-            var setOfPieces = new SetOfPieces();
+            var setOfPieces = new SetOfPieces("white");
             Assert.IsNotNull(setOfPieces);
         }
 
+        [TestMethod]
+        public void ListOfWhitePiecesTest()
+        {
+            var setOfPieces = new SetOfPieces("white");
+            Assert.AreEqual(16, setOfPieces.Pieces.Count);
+            
+        }
 
+        [TestMethod]
+        public void ListOfBlackPiecesTest()
+        {
+            var setOfPieces = new SetOfPieces("black");
+
+            Assert.AreEqual(16, setOfPieces.Pieces.Count);
+        }
 
 
     }
