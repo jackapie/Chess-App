@@ -8,5 +8,17 @@ namespace ChessApp.Board
 {
     public class BoardSquare
     {
+        public Piece BoardSquareContent {get; protected set;}
+
+
+        public void AddPiece(Piece piece)
+        {
+            BoardSquareContent = piece;
+        }
+
+        public void RemovePiece()
+        {
+            BoardSquareContent = null;
+        }
     }
 }

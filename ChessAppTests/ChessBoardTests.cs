@@ -1,5 +1,6 @@
 using ChessApp;
 using ChessApp.Board;
+using ChessAppTests.Mocks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 
@@ -36,6 +37,31 @@ namespace ChessAppTests
             Assert.AreEqual(64, chessBoard.Board.Select(row => row.Count).Sum());
 
         }
+
+        [TestMethod]
+        public void AddPieceToBoardSquareTest()
+        {
+            var boardSquare = new BoardSquare();
+            var piece = new MockPiece();
+
+            boardSquare.AddPiece(piece);
+
+            Assert.AreEqual(piece, boardSquare.BoardSquareContent);
+        }
+
+        [TestMethod]
+        public void RemovePieceFromBoardSquareTest()
+        {
+            var boardSquare = new BoardSquare();
+            var piece = new MockPiece();
+
+            boardSquare.AddPiece(piece);
+
+            boardSquare.RemovePiece();
+
+            Assert.AreEqual(null, boardSquare.BoardSquareContent);
+        }
+
 
 
     }
