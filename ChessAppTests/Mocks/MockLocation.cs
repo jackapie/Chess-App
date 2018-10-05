@@ -10,7 +10,7 @@ namespace ChessAppTests.Mocks
         public int x { get; protected set; }
         public int y { get; protected set; }
 
-        public MockLocation(int x, int y)
+        public MockLocation(int y, int x)
         {
             this.x = x;
             this.y = y;

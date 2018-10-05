@@ -1,5 +1,6 @@
 using ChessApp;
 using ChessApp.Board;
+using ChessApp.Location;
 using ChessAppTests.Mocks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
@@ -69,14 +70,35 @@ namespace ChessAppTests
 
             var piece = new MockPiece();
 
-            var location = new MockLocation(4,4);
-            
+            ILocation location = new MockLocation(3,6);
+           
             chessBoard.AddPiece(piece, location);
 
-            var content = chessBoard.Board[4][4].BoardSquareContent;
+            var content = chessBoard.Board[location.y][location.x].BoardSquareContent;
 
             Assert.AreEqual(piece, content);
         }
+
+        [TestMethod]
+        public void GetChessLocationTest()
+        {
+            var chessBoard = new ChessBoard();
+            ILocation chessLocation = new ChessLocation("a1");
+
+            Assert.AreEqual(0, chessLocation.x);
+            Assert.AreEqual(7, chessLocation.y);
+        }
+
+        [TestMethod]
+        public void GetChessLocationTest2()
+        {
+            var chessBoard = new ChessBoard();
+            ILocation chessLocation = new ChessLocation("h8");
+
+            Assert.AreEqual(7, chessLocation.x);
+            Assert.AreEqual(0, chessLocation.y);
+        }
+
 
     }
 }
