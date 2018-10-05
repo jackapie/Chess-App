@@ -1,4 +1,5 @@
 ﻿using ChessApp.Board;
+using ChessApp.Location;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,11 @@ namespace ChessApp
                 }
                 Board.Add(row);
             }
+        }
+
+        public void AddPiece(Piece piece, ILocation location)
+        {
+            Board[location.y][location.x].AddPiece(piece);
         }
     }
 }

@@ -62,7 +62,21 @@ namespace ChessAppTests
             Assert.AreEqual(null, boardSquare.BoardSquareContent);
         }
 
+        [TestMethod]
+        public void AddPieceToLocation()
+        {
+            var chessBoard = new ChessBoard();
 
+            var piece = new MockPiece();
+
+            var location = new MockLocation(4,4);
+            
+            chessBoard.AddPiece(piece, location);
+
+            var content = chessBoard.Board[4][4].BoardSquareContent;
+
+            Assert.AreEqual(piece, content);
+        }
 
     }
 }
