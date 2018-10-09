@@ -16,12 +16,31 @@ namespace ChessAppTests
             Assert.IsNotNull(pieceFactory);
 
         }
+        [TestMethod]
+        public void BlackFactoryNullTest()
+        {
+            var pieceFactory = new BlackPieceFactory();
+            var nullPiece = pieceFactory.Create("noPiece");
+
+            Assert.IsNull(nullPiece);
+
+        }
 
         [TestMethod]
         public void CreateWhitePieceFactoryTest()
         {
             var pieceFactory = new WhitePieceFactory();
             Assert.IsNotNull(pieceFactory);
+
+        }
+
+        [TestMethod]
+        public void WhiteFactoryNullTest()
+        {
+            var pieceFactory = new WhitePieceFactory();
+            var nullPiece = pieceFactory.Create("noPiece");
+
+            Assert.IsNull(nullPiece);
 
         }
     }

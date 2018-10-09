@@ -1,5 +1,6 @@
 using ChessApp;
 using ChessApp.Players;
+using ChessAppTests.Mocks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ChessAppTests
@@ -10,34 +11,23 @@ namespace ChessAppTests
         [TestMethod]
         public void CreatePlayerTest()
         {
-            var player = new Player();
+            var player = new MockPlayer();
 
             Assert.IsNotNull(player);
         }
 
         [TestMethod]
-        public void SetOfPiecesTest()
+        public void SetUpPiecesTest()
         {
-            var setOfPieces = new SetOfPieces("white");
-            Assert.IsNotNull(setOfPieces);
+            var player = new MockPlayer();
+            var board = new ChessBoard();
+            player.SetUpPieces(board);
+            //Should be a MockPiece at a7, ie y=1 and x=0
+            Assert.IsNotNull(board.Board[1][0].BoardSquareContent);
         }
+        
 
-        [TestMethod]
-        public void ListOfWhitePiecesTest()
-        {
-            var setOfPieces = new SetOfPieces("white");
-            Assert.AreEqual(16, setOfPieces.Pieces.Count);
-            
-        }
-
-        [TestMethod]
-        public void ListOfBlackPiecesTest()
-        {
-            var setOfPieces = new SetOfPieces("black");
-
-            Assert.AreEqual(16, setOfPieces.Pieces.Count);
-        }
-
+        
 
     }
 }

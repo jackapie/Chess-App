@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace ChessApp.Players
 {
-    public class Player
+    public abstract class Player
     {
         //There are two players; black and white
         //Players have a list of pieces 
         //Each piece starts in a particular position on the board
 
-        IStartingLayout StartingLayout;
+        protected abstract IStartingLayout StartingLayout { get; }
 
-        PieceFactory PieceFactory;
+        protected abstract PieceFactory PieceFactory { get; }
 
         public void SetUpPieces(ChessBoard board)
         {
@@ -26,20 +26,7 @@ namespace ChessApp.Players
             }
         }
 
-        public Player(string colour)
-        {
-            if (colour == "white")
-            {
-                StartingLayout = new WhiteStartingLayout();
-                PieceFactory = new WhitePieceFactory();
-            }
-            if (colour == "black")
-            {
-                StartingLayout = new BlackStartingLayout();
-                PieceFactory = new BlackPieceFactory();
-            }
 
-        }
 
     }
 }
