@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ChessApp
 {
-    public abstract class PieceFactory
+    public interface IStartingLayout
     {
-        public abstract Piece Create(string piece);
+        List<Thing> GetLayout();
     }
 }

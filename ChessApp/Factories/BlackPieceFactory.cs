@@ -9,35 +9,26 @@ namespace ChessApp
 {
     public class BlackPieceFactory : PieceFactory
     {
-        public override Piece CreatePawn()
+        
+        public override Piece Create(string piece)
         {
-            var blackPawn = new BlackPawn();
-            return blackPawn;
-        }
-        public override Piece CreateKing()
-        {
-            var blackKing = new BlackKing();
-            return blackKing;
-        }
-        public override Piece CreateQueen()
-        {
-            var blackQueen = new BlackQueen();
-            return blackQueen;
-        }
-        public override Piece CreateKnight()
-        {
-            var blackKnight = new BlackKnight();
-            return blackKnight;
-        }
-        public override Piece CreateBishop()
-        {
-            var blackBishop = new BlackBishop();
-            return blackBishop;
-        }
-        public override Piece CreateRook()
-        {
-            var blackRook = new BlackRook();
-            return blackRook;
+            switch (piece)
+            {
+                case "pawn":
+                    return new BlackPawn();
+                case "queen":
+                    return new BlackQueen();
+                case "king":
+                    return new BlackKing();
+                case "knight":
+                    return new BlackKnight();
+                case "bishop":
+                    return new BlackBishop();
+                case "rook":
+                    return new BlackRook();
+            }
+
+            return null;
         }
     }
 }

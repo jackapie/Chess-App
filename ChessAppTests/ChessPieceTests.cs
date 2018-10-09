@@ -14,7 +14,7 @@ namespace ChessAppTests
         {
             var pieceFactory = new WhitePieceFactory();
 
-            var whitePawn = pieceFactory.CreatePawn();
+            var whitePawn = pieceFactory.Create("pawn");
             Assert.IsNotNull(whitePawn);
         }
 
@@ -22,7 +22,7 @@ namespace ChessAppTests
         public void CreateWhiteKingTest()
         {
             var pieceFactory = new WhitePieceFactory();
-            var whiteKing = pieceFactory.CreateKing();
+            var whiteKing = pieceFactory.Create("king");
             Assert.IsNotNull(whiteKing);
         }
 
@@ -30,7 +30,7 @@ namespace ChessAppTests
         public void CreateWhiteQueenTest()
         {
             var pieceFactory = new WhitePieceFactory();
-            var whiteQueen = pieceFactory.CreateQueen();
+            var whiteQueen = pieceFactory.Create("queen");
             Assert.IsNotNull(whiteQueen);
         }
 
@@ -38,7 +38,7 @@ namespace ChessAppTests
         public void CreateWhiteKnightTest()
         {
             var pieceFactory = new WhitePieceFactory();
-            var whiteKnight = pieceFactory.CreateKnight();
+            var whiteKnight = pieceFactory.Create("knight");
             Assert.IsNotNull(whiteKnight);
         }
 
@@ -46,7 +46,7 @@ namespace ChessAppTests
         public void CreateWhiteBishopTest()
         {
             var pieceFactory = new WhitePieceFactory();
-            var whiteBishop = pieceFactory.CreateBishop();
+            var whiteBishop = pieceFactory.Create("bishop");
             Assert.IsNotNull(whiteBishop);
         }
 
@@ -54,7 +54,7 @@ namespace ChessAppTests
         public void CreateWhiteRookTest()
         {
             var pieceFactory = new WhitePieceFactory();
-            var whiteRook = pieceFactory.CreateRook();
+            var whiteRook = pieceFactory.Create("rook");
             Assert.IsNotNull(whiteRook);
         }
 
@@ -64,7 +64,7 @@ namespace ChessAppTests
         {
             var pieceFactory = new BlackPieceFactory();
 
-            var blackPawn = pieceFactory.CreatePawn();
+            var blackPawn = pieceFactory.Create("pawn");
             Assert.IsNotNull(blackPawn);
         }
 
@@ -72,7 +72,7 @@ namespace ChessAppTests
         public void CreateBlackKingTest()
         {
             var pieceFactory = new BlackPieceFactory();
-            var blackKing = pieceFactory.CreateKing();
+            var blackKing = pieceFactory.Create("king");
             Assert.IsNotNull(blackKing);
         }
 
@@ -80,7 +80,7 @@ namespace ChessAppTests
         public void CreateBlackQueenTest()
         {
             var pieceFactory = new BlackPieceFactory();
-            var blackQueen = pieceFactory.CreateQueen();
+            var blackQueen = pieceFactory.Create("queen");
             Assert.IsNotNull(blackQueen);
         }
 
@@ -88,7 +88,7 @@ namespace ChessAppTests
         public void CreateBlackKnightTest()
         {
             var pieceFactory = new BlackPieceFactory();
-            var blackKnight = pieceFactory.CreateKnight();
+            var blackKnight = pieceFactory.Create("knight");
             Assert.IsNotNull(blackKnight);
         }
 
@@ -96,7 +96,7 @@ namespace ChessAppTests
         public void CreateBlackBishopTest()
         {
             var pieceFactory = new BlackPieceFactory();
-            var blackBishop = pieceFactory.CreateBishop();
+            var blackBishop = pieceFactory.Create("bishop");
             Assert.IsNotNull(blackBishop);
         }
 
@@ -104,8 +104,15 @@ namespace ChessAppTests
         public void CreateBlackRookTest()
         {
             var pieceFactory = new BlackPieceFactory();
-            var blackRook = pieceFactory.CreateRook();
+            var blackRook = pieceFactory.Create("rook");
             Assert.IsNotNull(blackRook);
+        }
+
+        [TestMethod]
+        public void PositionPieceTest()
+        {
+            // white rook goes at a1
+            // white knight goes at b1
         }
     }
 }
