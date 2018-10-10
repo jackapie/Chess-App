@@ -15,7 +15,7 @@ namespace ChessApp
             var startX = startLocation.x;
             var endY = endLocation.y;
             var startY = startLocation.y;
-
+                        
             if (endX == startX && endY == startY)
             {
                 return false;
@@ -30,7 +30,12 @@ namespace ChessApp
 
         bool Valid(int endValue,  int startValue)
         {
-            if(endValue == startValue||endValue == startValue +1 || endValue == startValue - 1)
+            if(endValue < 0|| endValue > 7)
+            {
+                return false;
+            }
+
+            if (endValue == startValue||endValue == startValue +1 || endValue == startValue - 1)
             {
                 return true;
             }

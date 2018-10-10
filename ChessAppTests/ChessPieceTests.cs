@@ -128,7 +128,25 @@ namespace ChessAppTests
             var content = chessBoard.Board[endLocation.y][endLocation.x].BoardSquareContent;
             Assert.AreEqual(piece, content);
         }
+        [TestMethod]
+        public void KingNotValidMoveTest()
+        {
+            var chessBoard = new ChessBoard();
 
- 
+            var piece = new MockKing();
+
+            ILocation startLocation = new MockLocation(3, 6);
+
+            chessBoard.AddPiece(piece, startLocation);
+
+            ILocation endLocation = new MockLocation(0, 0);
+
+            chessBoard.MovePiece(startLocation, endLocation);
+
+            var content = chessBoard.Board[endLocation.y][endLocation.x].BoardSquareContent;
+            Assert.AreNotEqual(piece, content);
+        }
+
+
     }
 }
