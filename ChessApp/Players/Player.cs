@@ -20,9 +20,9 @@ namespace ChessApp.Players
         {
             var layout = StartingLayout.GetLayout();
 
-            foreach (var thing in layout)
+            foreach (var whatWhere in layout)
             {
-                board.AddPiece(PieceFactory.Create(thing.PieceType), thing.Location);
+                board.AddPiece(PieceFactory.Create(whatWhere.PieceType), whatWhere.Location);
             }
         }
 

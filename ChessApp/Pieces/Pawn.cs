@@ -8,5 +8,6 @@ namespace ChessApp
 {
     abstract class Pawn : Piece
     {
+
     }
 }

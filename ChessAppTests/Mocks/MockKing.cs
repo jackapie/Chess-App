@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ChessApp;
 
-namespace ChessApp
+namespace ChessAppTests.Mocks
 {
-    public interface IStartingLayout
+    class MockKing : King
     {
-        List<WhatWhere> GetLayout();
+
     }
 }

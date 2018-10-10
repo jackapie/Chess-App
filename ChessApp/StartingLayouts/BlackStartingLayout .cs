@@ -9,37 +9,37 @@ namespace ChessApp
 {
     public class BlackStartingLayout : IStartingLayout
     {
-        public List<Thing> GetLayout()
+        public List<WhatWhere> GetLayout()
         {
-            var layout = new List<Thing>();
+            var layout = new List<WhatWhere>();
 
-            layout.Add(MakeThing("pawn", "a7"));
-            layout.Add(MakeThing("pawn", "b7"));
-            layout.Add(MakeThing("pawn", "c7"));
-            layout.Add(MakeThing("pawn", "d7"));
-            layout.Add(MakeThing("pawn", "e7"));
-            layout.Add(MakeThing("pawn", "f7"));
-            layout.Add(MakeThing("pawn", "g7"));
-            layout.Add(MakeThing("pawn", "h7"));
-            layout.Add(MakeThing("rook", "a8"));
-            layout.Add(MakeThing("rook", "h8"));
-            layout.Add(MakeThing("knight", "b8"));
-            layout.Add(MakeThing("knight", "g8"));
-            layout.Add(MakeThing("bishop", "c8"));
-            layout.Add(MakeThing("bishop", "f8"));
-            layout.Add(MakeThing("queen", "d8"));
-            layout.Add(MakeThing("king", "e8"));
+            layout.Add(AssignPosition("pawn", "a7"));
+            layout.Add(AssignPosition("pawn", "b7"));
+            layout.Add(AssignPosition("pawn", "c7"));
+            layout.Add(AssignPosition("pawn", "d7"));
+            layout.Add(AssignPosition("pawn", "e7"));
+            layout.Add(AssignPosition("pawn", "f7"));
+            layout.Add(AssignPosition("pawn", "g7"));
+            layout.Add(AssignPosition("pawn", "h7"));
+            layout.Add(AssignPosition("rook", "a8"));
+            layout.Add(AssignPosition("rook", "h8"));
+            layout.Add(AssignPosition("knight", "b8"));
+            layout.Add(AssignPosition("knight", "g8"));
+            layout.Add(AssignPosition("bishop", "c8"));
+            layout.Add(AssignPosition("bishop", "f8"));
+            layout.Add(AssignPosition("queen", "d8"));
+            layout.Add(AssignPosition("king", "e8"));
 
             return layout;
         }
 
-        Thing MakeThing(string pieceType, string location)
+        WhatWhere AssignPosition(string pieceType, string location)
         {
-            var thing = new Thing();
-            thing.PieceType = pieceType;
+            var assignment = new WhatWhere();
+            assignment.PieceType = pieceType;
             ILocation chessLocation = new ChessLocation(location);
-            thing.Location = chessLocation;
-            return thing;
+            assignment.Location = chessLocation;
+            return assignment;
         }
     }
 }

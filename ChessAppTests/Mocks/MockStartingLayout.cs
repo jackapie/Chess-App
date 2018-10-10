@@ -8,22 +8,22 @@ namespace ChessAppTests.Mocks
 {
     class MockStartingLayout : IStartingLayout
     {
-        public List<Thing> GetLayout()
+        public List<WhatWhere> GetLayout()
         {
-            var layout = new List<Thing>();
+            var layout = new List<WhatWhere>();
 
-            layout.Add(MakeThing("mockPiece", "a7"));
+            layout.Add(AssignPosition("mockPiece", "a7"));
 
             return layout;
         }
 
-        Thing MakeThing(string pieceType, string location)
+        WhatWhere AssignPosition(string pieceType, string location)
         {
-            var thing = new Thing();
-            thing.PieceType = pieceType;
+            var assignment = new WhatWhere();
+            assignment.PieceType = pieceType;
             ILocation chessLocation = new ChessLocation(location);
-            thing.Location = chessLocation;
-            return thing;
+            assignment.Location = chessLocation;
+            return assignment;
         }
     }
 }

@@ -99,6 +99,24 @@ namespace ChessAppTests
             Assert.AreEqual(0, chessLocation.y);
         }
 
+        [TestMethod]
+        public void MovePieceTest()
+        {
+            //Setup board with MockPiece at a7/Board[1][0]
+            var player = new MockPlayer();
+            var board = new ChessBoard();
+            player.SetUpPieces(board);
+            //Move MockPiece to b6/Board[2][1] (y=2, x=1)
+
+            ILocation startLocation = new MockLocation(1, 0);
+            ILocation endLocation = new MockLocation(2, 1);
+
+            board.MovePiece(startLocation, endLocation);
+
+            Assert.IsNull(board.Board[1][0].BoardSquareContent);
+            Assert.IsNotNull(board.Board[2][1].BoardSquareContent);
+        }
+
 
     }
 }

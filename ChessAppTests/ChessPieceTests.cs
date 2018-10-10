@@ -1,4 +1,6 @@
 ﻿using ChessApp;
+using ChessApp.Location;
+using ChessAppTests.Mocks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -109,10 +111,24 @@ namespace ChessAppTests
         }
 
         [TestMethod]
-        public void PositionPieceTest()
+        public void KingValidMoveTest()
         {
-            // white rook goes at a1
-            // white knight goes at b1
+            var chessBoard = new ChessBoard();
+
+            var piece = new MockKing();
+
+            ILocation startLocation = new MockLocation(3, 6);
+
+            chessBoard.AddPiece(piece, startLocation);
+
+            ILocation endLocation = new MockLocation(4, 5);
+
+            chessBoard.MovePiece(startLocation, endLocation);
+
+            var content = chessBoard.Board[endLocation.y][endLocation.x].BoardSquareContent;
+            Assert.AreEqual(piece, content);
         }
+
+ 
     }
 }

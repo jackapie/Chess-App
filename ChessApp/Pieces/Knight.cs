@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChessApp.Location;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,9 @@ namespace ChessApp
 {
     class Knight : Piece
     {
+        public override bool ValidMove(ILocation startLocation, ILocation endLocation)
+        {
+            return false;
+        }
     }
 }

@@ -1,4 +1,5 @@
 using ChessApp;
+using ChessApp.Location;
 using ChessApp.Players;
 using ChessAppTests.Mocks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -25,9 +26,10 @@ namespace ChessAppTests
             //Should be a MockPiece at a7, ie y=1 and x=0
             Assert.IsNotNull(board.Board[1][0].BoardSquareContent);
         }
-        
 
         
+
+
 
     }
 }

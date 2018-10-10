@@ -32,5 +32,29 @@ namespace ChessApp
         {
             Board[location.y][location.x].AddPiece(piece);
         }
+
+        public void RemovePiece(ILocation location)
+        {
+            
+            Board[location.y][location.x].RemovePiece();
+        }
+
+        public Piece GetPiece(ILocation location)
+        {
+            return Board[location.y][location.x].BoardSquareContent;
+        }
+
+        public void MovePiece(ILocation startLocation, ILocation endLocation)
+        {
+            var piece = GetPiece(startLocation);
+            if (piece.ValidMove(startLocation, endLocation))
+            {
+                RemovePiece(startLocation);
+                AddPiece(piece, endLocation);
+            }
+            else
+            { //some error message
+            }
+        }
     }
 }

@@ -75,7 +75,7 @@
     <Compile Include="Pieces\Queen.cs" />
     <Compile Include="Pieces\Rook.cs" />
     <Compile Include="Factories\WhitePieceFactory.cs" />
-    <Compile Include="StartingLayouts\Thing.cs" />
+    <Compile Include="StartingLayouts\WhatWhere.cs" />
     <Compile Include="StartingLayouts\BlackStartingLayout .cs" />
     <Compile Include="StartingLayouts\WhiteStartingLayout.cs" />
   </ItemGroup>

@@ -52,6 +52,7 @@
     <Compile Include="ChessBoardTests.cs" />
     <Compile Include="ChessPieceTests.cs" />
     <Compile Include="FactoryTests.cs" />
+    <Compile Include="Mocks\MockKing.cs" />
     <Compile Include="Mocks\MockLocation.cs" />
     <Compile Include="Mocks\MockPiece.cs" />
     <Compile Include="Mocks\MockPieceFactory.cs" />

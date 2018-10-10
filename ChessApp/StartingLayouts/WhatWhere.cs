@@ -2,7 +2,7 @@
 
 namespace ChessApp
 {
-    public class Thing
+    public class WhatWhere
     {
         public string PieceType {get;set;}
 
