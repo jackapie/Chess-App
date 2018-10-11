@@ -13,7 +13,16 @@ namespace ChessApp.Pieces
        
         public override List<BoardSquare> ListPossibleMoves(ILocation location, List<List<BoardSquare>> board)
         {
-            return null;
+            BoardSquare normalMove()
+            {
+                return board[location.y - 1][location.x];
+            }
+
+            var possibilities = new List<BoardSquare>();
+
+            possibilities.Add(normalMove());
+
+            return possibilities;
         }
     }
 }
