@@ -20,16 +20,17 @@ namespace ChessApp
                 return board[location.y + changeY][location.x + changeX];
             }
 
-            var possibilities = new List<BoardSquare>();
-
-            possibilities.Add(move(1, 0));
-            possibilities.Add(move(1, 1));
-            possibilities.Add(move(1, -1));
-            possibilities.Add(move(0, 1));
-            possibilities.Add(move(0, -1));
-            possibilities.Add(move(-1, 0));
-            possibilities.Add(move(-1, 1));
-            possibilities.Add(move(-1, -1));
+            var possibilities = new List<BoardSquare>
+            {
+                move(1, 0),
+                move(1, 1),
+                move(1, -1),
+                move(0, 1),
+                move(0, -1),
+                move(-1, 0),
+                move(-1, 1),
+                move(-1, -1)
+            };
 
 
             return possibilities;
