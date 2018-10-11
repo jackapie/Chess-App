@@ -1,4 +1,5 @@
-﻿using ChessApp.Location;
+﻿using ChessApp.Board;
+using ChessApp.Location;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,10 @@ namespace ChessApp
 {
     abstract class Queen : Piece
     {
-        public override bool ValidMove(ILocation startLocation, ILocation endLocation)
+       
+        public override List<BoardSquare> ListPossibleMoves(ILocation location, List<List<BoardSquare>> board)
         {
-            return false;
+            return null;
         }
     }
 }

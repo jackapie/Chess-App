@@ -1,4 +1,5 @@
 ﻿using ChessApp;
+using ChessApp.Board;
 using ChessApp.Location;
 using System;
 using System.Collections.Generic;
@@ -8,9 +9,20 @@ namespace ChessAppTests.Mocks
 {
     class MockPiece : Piece
     {
-        public override bool ValidMove(ILocation startLocation, ILocation endLocation)
+       
+
+        public override List<BoardSquare> ListPossibleMoves(ILocation location, List<List<BoardSquare>> board)
         {
-            return true;
+            BoardSquare position(int changeX, int changeY)
+            {
+                return board[location.y + changeY][location.x + changeX];
+            }
+
+            var possibilities = new List<BoardSquare>();
+
+            possibilities.Add(position(1, 1));
+
+            return possibilities;
         }
     }
 }

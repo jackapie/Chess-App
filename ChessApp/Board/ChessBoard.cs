@@ -35,7 +35,7 @@ namespace ChessApp
 
         public void RemovePiece(ILocation location)
         {
-            
+
             Board[location.y][location.x].RemovePiece();
         }
 
@@ -44,10 +44,37 @@ namespace ChessApp
             return Board[location.y][location.x].BoardSquareContent;
         }
 
+        List<BoardSquare> GetPossibleMoves(ILocation location, List<List<BoardSquare>> Board)
+        {
+            var piece = GetPiece(location);
+
+            var possibleMoves = piece.ListPossibleMoves(location, Board);
+            return possibleMoves;
+        }
+
+        bool IsPossibleMove(ILocation startLocation, ILocation endLocation)
+        {
+           if( GetPossibleMoves(startLocation, Board).Contains(Board[endLocation.y][endLocation.x]))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        bool ValidSquare(ILocation location)
+        {
+            if (location.x >= 0 && location.x < 8
+                && location.y >= 0 && location.y < 8)
+            {
+                return true;
+            }
+            return false;
+        }
         public void MovePiece(ILocation startLocation, ILocation endLocation)
         {
             var piece = GetPiece(startLocation);
-            if (piece.ValidMove(startLocation, endLocation))
+           
+            if (ValidSquare(endLocation) && IsPossibleMove(startLocation, endLocation))
             {
                 RemovePiece(startLocation);
                 AddPiece(piece, endLocation);

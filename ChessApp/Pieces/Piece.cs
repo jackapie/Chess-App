@@ -1,4 +1,5 @@
-﻿using ChessApp.Location;
+﻿using ChessApp.Board;
+using ChessApp.Location;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,8 @@ namespace ChessApp
         //A position on the board
         //Permissable moves
 
-        public abstract bool ValidMove(ILocation startLocation, ILocation endLocation);
+        
+
+        public abstract List<BoardSquare> ListPossibleMoves(ILocation location, List<List<BoardSquare>> board);
     }
 }

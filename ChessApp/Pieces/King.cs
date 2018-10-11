@@ -1,4 +1,5 @@
-﻿using ChessApp.Location;
+﻿using ChessApp.Board;
+using ChessApp.Location;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,37 +10,29 @@ namespace ChessApp
 {
     public abstract class King : Piece
     {
-        public override bool ValidMove(ILocation startLocation, ILocation endLocation)
+       
+
+        public override List<BoardSquare> ListPossibleMoves(ILocation location, List<List<BoardSquare>> board)
         {
-            var endX = endLocation.x;
-            var startX = startLocation.x;
-            var endY = endLocation.y;
-            var startY = startLocation.y;
-                        
-            if (endX == startX && endY == startY)
+
+            BoardSquare position(int changeX, int changeY)
             {
-                return false;
+                return board[location.y + changeY][location.x + changeX];
             }
 
-            if (Valid(endX, startX)|| Valid(endY, startY))
-            {
-                return true;
-            }
-            return false;
-        }
+            var possibilities = new List<BoardSquare>();
 
-        bool Valid(int endValue,  int startValue)
-        {
-            if(endValue < 0|| endValue > 7)
-            {
-                return false;
-            }
+            possibilities.Add(position(1, 0));
+            possibilities.Add(position(1, 1));
+            possibilities.Add(position(1, -1));
+            possibilities.Add(position(0, 1));
+            possibilities.Add(position(0, -1));
+            possibilities.Add(position(-1, 0));
+            possibilities.Add(position(-1, 1));
+            possibilities.Add(position(-1, -1));
 
-            if (endValue == startValue||endValue == startValue +1 || endValue == startValue - 1)
-            {
-                return true;
-            }
-            return false;
+
+            return possibilities;
         }
     }
 }

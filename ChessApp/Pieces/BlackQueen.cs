@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChessApp.Pieces
 {
-    class BlackQueen : Queen
+     class BlackQueen : Queen
     {
     }
 }
