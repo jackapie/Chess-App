@@ -13,18 +13,20 @@ namespace ChessApp
        
         public override List<BoardSquare> ListPossibleMoves(ILocation location, List<List<BoardSquare>> board)
         {
-            BoardSquare position(int change)
+            //Moves in diagonal straight line, so changeX must equal changeY
+            BoardSquare move(int change)
             {
                 return board[location.y + change][location.x + change];
             }
 
             var possibilities = new List<BoardSquare>();
-
+            
+            //Distance limited by size of board
             for (int i = 0; i <8 ; i++)
             {
                 var counter = i + 1;
-                possibilities.Add(position(counter));
-                possibilities.Add(position(0 - counter));
+                possibilities.Add(move(counter));
+                possibilities.Add(move(0 - counter));
             }
 
             return possibilities;

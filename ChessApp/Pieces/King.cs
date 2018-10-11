@@ -15,21 +15,21 @@ namespace ChessApp
         public override List<BoardSquare> ListPossibleMoves(ILocation location, List<List<BoardSquare>> board)
         {
 
-            BoardSquare position(int changeX, int changeY)
+            BoardSquare move(int changeX, int changeY)
             {
                 return board[location.y + changeY][location.x + changeX];
             }
 
             var possibilities = new List<BoardSquare>();
 
-            possibilities.Add(position(1, 0));
-            possibilities.Add(position(1, 1));
-            possibilities.Add(position(1, -1));
-            possibilities.Add(position(0, 1));
-            possibilities.Add(position(0, -1));
-            possibilities.Add(position(-1, 0));
-            possibilities.Add(position(-1, 1));
-            possibilities.Add(position(-1, -1));
+            possibilities.Add(move(1, 0));
+            possibilities.Add(move(1, 1));
+            possibilities.Add(move(1, -1));
+            possibilities.Add(move(0, 1));
+            possibilities.Add(move(0, -1));
+            possibilities.Add(move(-1, 0));
+            possibilities.Add(move(-1, 1));
+            possibilities.Add(move(-1, -1));
 
 
             return possibilities;
